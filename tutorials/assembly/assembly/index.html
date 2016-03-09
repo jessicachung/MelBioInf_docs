@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-	<title>Assembly - LSCC Documentation</title>
+	<title>Tutorial - LSCC Documentation</title>
 
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -77,15 +77,15 @@
                         </li>
                     
                         <li >
+                            <a href="../../gvl_launch/gvl_launch/">Launching a Personal GVL Server</a>
+                        </li>
+                    
+                        <li >
                             <a href="../../galaxy_101/galaxy_101/">Introduction to Galaxy</a>
                         </li>
                     
                         <li >
                             <a href="../../galaxy-workflows/galaxy-workflows/">Galaxy Workflows</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../var_detect_advanced/var_detect_advanced_background/">Variant Detection Advanced</a>
                         </li>
                     
                         <li >
@@ -125,6 +125,10 @@
                         </li>
                     
                         <li >
+                            <a href="">Variant Detection Advanced</a>
+                        </li>
+                    
+                        <li >
                             <a href="">Identifying proteins from mass spectrometry data</a>
                         </li>
                     
@@ -155,7 +159,7 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../screenshots/">
+                    <a rel="prev" href="../assembly-background/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -175,13 +179,13 @@
         
             <li><a href="#tutorial-overview">Tutorial Overview</a></li>
         
-            <li><a href="#background-15-min">Background [15 min]</a></li>
+            <li><a href="#background">Background</a></li>
         
-            <li><a href="#preparation-15-min">Preparation [15 min]</a></li>
+            <li><a href="#preparation">Preparation</a></li>
         
-            <li><a href="#section-1-quality-control-15-mins">Section 1: Quality control [15 mins]</a></li>
+            <li><a href="#section-1-quality-control">Section 1: Quality control</a></li>
         
-            <li><a href="#section-2-assemble-reads-into-contigs-with-velvet-and-the-velvet-optimiser-35-min">Section 2: Assemble reads into contigs with Velvet and the Velvet Optimiser [35 min]</a></li>
+            <li><a href="#section-2-assemble-reads-into-contigs-with-velvet-and-the-velvet-optimiser">Section 2: Assemble reads into contigs with Velvet and the Velvet Optimiser</a></li>
         
             <li><a href="#section-3-extension">Section 3: Extension.</a></li>
         
@@ -190,16 +194,18 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<p>
-<a href=http://vlsci.org.au><img src="../media/vlsci_logo.jpg" alt="VLSCI logo" align="left" width="164"/></a>
-<a href=http://genome.edu.au><img src="../media/gvl_logo.jpg" alt="GVL logo" align="right" width="112"/></a><br></br><br></br>
-<br></br></p>
+<style>
 
-<p> </p>
+</style>
+
+<div class="image-header-gvl">
+    <a href=http://genome.edu.au><img src="../media/gvl_logo.jpg" alt="GVL logo" width="112"/></a>
+    <a href="http://galaxyproject.org"><img src="../media/GalaxyLogoHighRes.png" width="164" /></a>
+    <a href=http://vlsci.org.au><img src="../media/vlsci_logo.jpg" alt="VLSCI logo" width="164"/></a>
+</div>
 
 <h1 id="microbial-de-novo-assembly-for-illumina-data">Microbial de novo Assembly for Illumina Data</h1>
 <h2 id="introductory-tutorial"><em>Introductory Tutorial</em></h2>
-<p><img src="../media/D4D_5503X.jpg" width="70"/></p>
 <p>Written and maintained by <a href="mailto:simon.gladman@unimelb.edu.au">Simon Gladman</a> - VLSCI</p>
 <!-- toc
 ## Contents
@@ -223,7 +229,7 @@ It does not cover more complicated aspects of assembly such as:</p>
 <li>Gap filling techniques for “finishing” an assembly</li>
 <li>Measuring the accuracy of assemblies</li>
 </ul>
-<h2 id="background-15-min">Background [15 min]</h2>
+<h2 id="background">Background</h2>
 <p>Read the <a href="../assembly-background/#background">background to the workshop here</a></p>
 <p><strong>Where is the data in this tutorial from?</strong></p>
 <p>The data for this tutorial is from a whole genome sequencing experiment of a multi-drug resistant strain of the bacterium Staphylococcus aureus. The DNA was sequenced using an Illumina GAII sequencing machine. The data we are going to use consists of about 4 million x 75 base-pair, paired end reads (two FASTQ read files, one for each end of a DNA fragment.) The data was downloaded from the <a href="http://www.ncbi.nlm.nih.gov/sra/">NCBI Short Read Archive (SRA)</a> (http://www.ncbi.nlm.nih.gov/sra/). The specific sample is a public dataset published in April 2012 with SRA accession number ERR048396.</p>
@@ -235,7 +241,7 @@ It does not cover more complicated aspects of assembly such as:</p>
 <p><strong>The protocol in a nutshell:</strong></p>
 <p><em>Input:</em> Raw reads from sequencer run on microbial DNA sample.</p>
 <p><em>Output:</em> File of assembled scaffolds/contigs and associated information.</p>
-<h2 id="preparation-15-min">Preparation [15 min]</h2>
+<h2 id="preparation">Preparation</h2>
 <h3 id="login-to-galaxy">Login to Galaxy</h3>
 <ol>
 <li>Open a browser and go to a Galaxy server. (what is <a href="../assembly-background/#the-galaxy-workflow-platform">Galaxy</a>?)<ul>
@@ -260,10 +266,10 @@ It does not cover more complicated aspects of assembly such as:</p>
 <ol>
 <li>On the Galaxy tools panel, click on <strong>Get data -&gt; Upload File</strong>.</li>
 <li>Click on the <strong>Paste/Fetch Data</strong> button.</li>
-<li>Paste the URL: https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/Assembly/ERR048396_1.fastq.gz into the text box. Change the type to <em>fastqsanger</em> (Not <em>fastqcsanger</em>).</li>
+<li>Paste the URL: <em>https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/Assembly/ERR048396_1.fastq.gz</em> into the text box. Change the type to <em>fastqsanger</em> (Not <em>fastqcsanger</em>).</li>
 <li>Click on the <strong>Paste/Fetch Data</strong> button again.</li>
-<li>Paste the URL: https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/Assembly/ERR048396_2.fastq.gz into the text box and change it's type to <em>fastqsanger</em> as well.</li>
-<li>Repeat the process for the last URL: https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/Assembly/illumina_adapters.fna, but make it's type <em>fasta</em></li>
+<li>Paste the URL: <em>https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/Assembly/ERR048396_2.fastq.gz</em> into the text box and change it's type to <em>fastqsanger</em> as well.</li>
+<li>Repeat the process for the last URL: <em>https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/Assembly/illumina_adapters.fna</em> , but make it's type <em>fasta</em></li>
 <li>Click on the <strong>Start</strong> button. Once all of the uploads are at 100%, click on the <strong>Close</strong> button.</li>
 <li>When the files have finished uploading, rename them to ‘ERR048396_1.fastq’, ‘ERR048396_2.fastq’ and ‘illumina_adapters.fna’ respectively by clicking on the <img src="../media/Galaxy-edit.png" width=20 /> icon to the top right of the file name in the right hand Galaxy panel (the history panel)</li>
 </ol>
@@ -278,7 +284,7 @@ It does not cover more complicated aspects of assembly such as:</p>
 If you’re not familiar with the FASTQ format, click here for an overview</p>
 <p>NOTE: If you log out of Galaxy and log back in at a later time your data and results from previous experiments will be available in the right panel of your screen called the ‘History.’</p>
 <hr />
-<h2 id="section-1-quality-control-15-mins">Section 1: Quality control [15 mins]</h2>
+<h2 id="section-1-quality-control">Section 1: Quality control</h2>
 <p>The basic process here is to collect statistics about the quality of the reads in the sample FASTQ readsets. We will then evaluate their quality and choose an appropriate regime for quality filtering using Trimmomatic (a fastq read quality trimmer.)</p>
 <p><a href="https://docs.google.com/document/pub?id=16GwPmwYW7o_r-ZUgCu8-oSBBY1gC97TfTTinGDk98Ws">More detailed description of FastQC quality analysis can be found here.</a></p>
 <p><a href="http://www.usadellab.org/cms/index.php?page=trimmomatic">More detailed description of Trimmomatic read quality filtering can be found here.</a></p>
@@ -292,11 +298,12 @@ If you’re not familiar with the FASTQ format, click here for an overview</p>
 <li>Click <strong>Execute</strong></li>
 <li>Now repeat the above process on the second read file: <em>ERR048396_2.fastq</em></li>
 </ol>
-<p>Screenshot of this process can be seen <a href="../screenshots/#figure-1-screenshot-of-fastqc-interface-in-galaxy">here.</a></p>
 <blockquote>
 <p><img src="../media/tips.png" alt="Tip" height="42" width="42"/> Note: This may take a few minutes, depending on how busy Galaxy is.</p>
 </blockquote>
 <p>It is important to do both read files as the quality can be very different between them.</p>
+<h5 id="figure-1-screenshot-of-fastqc-interface-in-galaxy">Figure 1: Screenshot of FastQC interface in Galaxy</h5>
+<p><img src="../media/screenshot-fastqc-interface.png" width=80% /></p>
 <h3 id="examine-the-fastqc-output">Examine the FastQC output</h3>
 <p>You should have two output objects from the first step:</p>
 <ul>
@@ -312,7 +319,8 @@ If you’re not familiar with the FASTQ format, click here for an overview</p>
 <li>Basic statistics. This section tells us that the ASCII quality encoding format used was Sanger/Illumina 1.9 and the reads are length 75 and the percent GC content of the entire file is 35%.</li>
 <li>Per base sequence quality. In the plot you should see that most of the early bases are up around the '32' mark and then increase to 38-40, which is very high quality; The spread of quality values for the last few bases increases and some of the outliers have quality scores of less than 30. This is a very good quality dataset. 20 is often used as a cutoff for reliable quality.</li>
 </ul>
-<p>Screenshot can be seen <a href="../screenshots/#figure-2-screenshot-of-fastqc-output-in-galaxy">here.</a></p>
+<h5 id="figure-2-screenshot-of-fastqc-output-in-galaxy">Figure 2: Screenshot of FastQC output in Galaxy</h5>
+<p><img src="../media/screenshot-fastqc-output.png" width=80% /></p>
 <h3 id="quality-trim-the-reads-using-trimmomatic">Quality trim the reads using Trimmomatic.</h3>
 <ol>
 <li>
@@ -339,10 +347,11 @@ If you’re not familiar with the FASTQ format, click here for an overview</p>
 </li>
 <li>
 <p>Click <strong>Execute</strong>
-      <br></br>
-  Screenshot of this process can be seen <a href="../screenshots/">here</a>.<br></br></p>
+      <br></br></p>
 </li>
 </ol>
+<h5 id="figure-3-screenshot-of-trimmomatic-inputs-in-galaxy">Figure 3: Screenshot of Trimmomatic inputs in Galaxy</h5>
+<p><img src="../media/screenshot-trimmomatic-inputs.png" width=80% /></p>
 <h3 id="examine-the-trimmomatic-output-fastq-files">Examine the Trimmomatic output FastQ files.</h3>
 <p>You should have 4 new objects in your history from the output of Trimmomatic:</p>
 <ul>
@@ -353,7 +362,7 @@ If you’re not familiar with the FASTQ format, click here for an overview</p>
 </ul>
 <p>Click on the <img src="../media/Galaxy-view.png" width=20 /> on one of the objects to look at its contents. You’ll notice that not all of the reads are the same length now, as they have had the illumina adapters cut out of them and they’ve been quality trimmed.</p>
 <hr />
-<h2 id="section-2-assemble-reads-into-contigs-with-velvet-and-the-velvet-optimiser-35-min">Section 2: Assemble reads into contigs with Velvet and the Velvet Optimiser [35 min]</h2>
+<h2 id="section-2-assemble-reads-into-contigs-with-velvet-and-the-velvet-optimiser">Section 2: Assemble reads into contigs with Velvet and the Velvet Optimiser</h2>
 <p>The aim here is to assemble the trimmed reads into contigs/scaffolds using Velvet and the Velvet Optimiser.</p>
 <p>We will use a single tool, Velvet Optimiser, which takes the trimmed reads from Trimmomatic and performs numerous Velvet assemblies to find the best one. We need to add the reads in two separate libraries. One for the still paired reads and the other for the singleton reads orphaned from their pairs by the trimming process.</p>
 <p><a href="../assembly-background/">Click here for a more detailed explanation of Velvet assemblies and the Velvet Optimiser</a></p>
@@ -377,7 +386,8 @@ If you’re not familiar with the FASTQ format, click here for an overview</p>
 </li>
 <li>Click <strong>Execute</strong>.</li>
 </ol>
-<p>Screenshot of this process can be seen <a href="../screenshots/">here</a>.</p>
+<h5 id="figure-4-screenshot-of-velvet-optimiser-inputs-in-galaxy">Figure 4: Screenshot of Velvet Optimiser inputs in Galaxy</h5>
+<p><img src="../media/screenshot-velvetoptimiser-inputs.png" width=80% /></p>
 <h3 id="examine-assembly-output">Examine assembly output</h3>
 <p>Once step 1 is complete, you should now have 2 new objects in your history:
 <em> </em>VelvetOptimiser on data 9, data 7, and others: Contigs<em>
@@ -391,7 +401,11 @@ If you’re not familiar with the FASTQ format, click here for an overview</p>
 <p>Contig stats: This shows a table of the contigs and their k-mer coverages and which read library contributed to the coverage. It is interesting to note that some of them have much higher coverage than the average. These are most likely to be repeated contigs. (Things like ribosomal RNA and IS elements.)</p>
 </li>
 </ul>
-<p>Screenshots can be seen <a href="../screenshots/">here</a>.</p>
+<h5 id="figure-5-screenshot-of-assembled-contigs-a-and-contig-stats-b">Figure 5: Screenshot of assembled contigs (a) and contig stats (b)</h5>
+<h5 id="a">a</h5>
+<p><img src="../media/screenshot-contigs.png" width=80% /></p>
+<h5 id="b">b</h5>
+<p><img src="../media/screenshot-contig-stats.png" width=80% /></p>
 <h3 id="calculate-some-statistics-on-the-assembled-contigs">Calculate some statistics on the assembled contigs</h3>
 <ol>
 <li>From the tools menu in the left hand panel of Galaxy, select <strong>FASTA Manipulation -&gt; Fasta Statistics</strong> and run with these parameters:<ul>
@@ -447,7 +461,8 @@ If you’re not familiar with the FASTQ format, click here for an overview</p>
 <li>Click the button labelled: BLAST</li>
 </ul>
 <p>After a while the website will present a report of the blast run. Note that the sequence we blasted (if you chose NODE_1) is identical to part of a transposase gene (IS256) from a similar Staphylococcus aureus bacteria. These transposases occur frequently as repeats in bacterial genomes and so we shouldn’t be surprised at its very high coverage.</p>
-<p>A screenshot of the output can be seen <a href="../screenshots/">here</a>.</p>
+<h5 id="figure-6-screenshot-of-the-output-from-the-ncbi-blast-website">Figure 6: Screenshot of the output from the NCBI Blast website</h5>
+<p><img src="../media/screenshot-blast.png" width=80% /></p>
 <hr /></div>
         </div>
 
