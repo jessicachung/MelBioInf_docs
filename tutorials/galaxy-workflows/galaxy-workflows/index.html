@@ -1,194 +1,1047 @@
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.10.1">
+    
+    
+      
+        <title>Tutorial - Bioinformatics Documentation</title>
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr-e826f8942a.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application-a20f419c8e.css">
+      
+    
+    
+      
         
         
         
-        <link rel="shortcut icon" href="../../../img/favicon.ico">
-
-	<title>Galaxy Workflows - LSCC Documentation</title>
-
-        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../../css/highlight.css">
-        <link href="../../../css/base.css" rel="stylesheet">
-        <link href="../../../includes/media/mdx_showable.css" rel="stylesheet">
-        <link href="../../../includes/media/mdx_showable_user.css" rel="stylesheet">
-        <link href="../../../includes/media/slides.css" rel="stylesheet">
-        <link href="../../../includes/media/tute.css" rel="stylesheet">
-
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-
-        
-    </head>
-
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../../extra.css">
+    
+    
+  </head>
+  
+  
+  
+  
     <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-            <!-- Main title -->
-            <a class="navbar-brand" href="../../..">LSCC Documentation</a>
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="Bioinformatics Documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon md-icon--home"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  General Tutorials
+                </span>
+              
+                <span class="md-header-nav__parent">
+                  Galaxy Workflows
+                </span>
+              
+            
+            Tutorial
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
         </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-            <!-- Main navigation -->
-            <ul class="nav navbar-nav">
-            
-            
-                <li >
-                    <a href="../../..">Home</a>
-                </li>
-            
-            
-            
-                <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../">Overview</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../ngs_overview/NGS_Overview/">NGS Overview</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../using_git/Using_Git/">Using Git and Github for revision control</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../gvl_launch/gvl_launch/">Launching a Personal GVL Server</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../galaxy_101/galaxy_101/">Introduction to Galaxy</a>
-                        </li>
-                    
-                        <li class="active">
-                            <a href="./">Galaxy Workflows</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../rna_seq_dge_basic/rna_seq_basic_background/">RNA-seq Basic Background</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../rna_seq_dge_basic/rna_seq_basic_tutorial/">RNA-seq Basic</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../rna_seq_dge_advanced/rna_seq_advanced_tutorial/">RNA-seq Advanced</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../rna_seq_exp_design/rna_seq_experimental_design/">RNA-seq Experimental Design</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../hpc/">Introduction to HPC</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../unix/">Introduction to Unix</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../python_overview/python_overview/">Python Overview</a>
-                        </li>
-                    
-                        <li >
-                            <a href="">Microbial de novo Assembly for Illumina Data</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../../variant_calling_galaxy_1/variant_calling_galaxy_1/">Introduction to Variant Calling using Galaxy</a>
-                        </li>
-                    
-                        <li >
-                            <a href="">Variant Detection Advanced</a>
-                        </li>
-                    
-                        <li >
-                            <a href="">Identifying proteins from mass spectrometry data</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Protocols <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../assembly/assembly-protocol/">De Novo Genome Assembly for Illumina Data</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            </ul>
-
-            <!-- Search, Navigation and Repo links -->
-            <ul class="nav navbar-nav navbar-right">
-                <li >
-                    <a rel="next" href="../../galaxy_101/galaxy_101/">
-                        <i class="fa fa-arrow-left"></i> Previous
-                    </a>
-                </li>
-                <li >
-                    <a rel="prev" href="../../rna_seq_dge_basic/rna_seq_basic_background/">
-                        Next <i class="fa fa-arrow-right"></i>
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
+      </div>
     </div>
+  </div>
 </div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
 
-        <div class="container">
-            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
+
+  
+
+
+  <a href="https://github.com/vlsci/lscc_docs" title="Go to repository" class="md-source" data-md-source="github">
     
-        <li class="main active"><a href="#galaxy-workflows">Galaxy Workflows</a></li>
-        
-            <li><a href="#background">Background</a></li>
-        
-            <li><a href="#section-1-preparation">Section 1: Preparation.</a></li>
-        
-            <li><a href="#section-2-create-and-run-a-workflow">Section 2: Create and run a workflow.</a></li>
-        
-            <li><a href="#what-now">What now?</a></li>
-        
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
     
+    <div class="md-source__repository">
+      vlsci/lscc_docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <div class="md-nav__button md-logo">
+      
+        <i class="md-icon md-icon--home"></i>
+      
+    </div>
+    Bioinformatics Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/vlsci/lscc_docs" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      vlsci/lscc_docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      General Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        General Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python_overview/python_overview/" title="Python Overview" class="md-nav__link">
+      Python Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_git/Using_Git/" title="Using Git and Github for revision control" class="md-nav__link">
+      Using Git and Github for revision control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hpc/" title="Introduction to HPC" class="md-nav__link">
+      Introduction to HPC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../unix/" title="Introduction to Unix" class="md-nav__link">
+      Introduction to Unix
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../gvl_launch/gvl_launch/" title="Launching a Personal GVL Server" class="md-nav__link">
+      Launching a Personal GVL Server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../galaxy_101/galaxy_101/" title="Introduction to Galaxy" class="md-nav__link">
+      Introduction to Galaxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7" checked>
+    
+    <label class="md-nav__link" for="nav-2-7">
+      Galaxy Workflows
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-7">
+        Galaxy Workflows
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Tutorial
+      </label>
+    
+    <a href="./" title="Tutorial" class="md-nav__link md-nav__link--active">
+      Tutorial
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" title="Background" class="md-nav__link">
+    Background
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-1-preparation" title="Section 1: Preparation." class="md-nav__link">
+    Section 1: Preparation.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-2-create-and-run-a-workflow" title="Section 2: Create and run a workflow." class="md-nav__link">
+    Section 2: Create and run a workflow.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-the-workflow-history" title="Import the workflow history" class="md-nav__link">
+    Import the workflow history
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-creation-method-1" title="Workflow creation: Method 1" class="md-nav__link">
+    Workflow creation: Method 1
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#some-discussion" title="Some discussion" class="md-nav__link">
+    Some discussion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-creation-method-2" title="Workflow Creation: Method 2" class="md-nav__link">
+    Workflow Creation: Method 2
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-workflow-name-and-edit-space" title="Step 1: Create a workflow name and edit space." class="md-nav__link">
+    Step 1: Create a workflow name and edit space.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-open-the-editor-and-place-component-tools" title="Step 2: Open the editor and place component tools" class="md-nav__link">
+    Step 2: Open the editor and place component tools
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-save-it" title="Step 3: Save it!" class="md-nav__link">
+    Step 3: Save it!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-workflow" title="Running the workflow" class="md-nav__link">
+    Running the workflow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-new-history" title="Create the new history" class="md-nav__link">
+    Create the new history
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-workflow" title="Run the workflow" class="md-nav__link">
+    Run the workflow
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-now" title="What now?" class="md-nav__link">
+    What now?
+  </a>
+  
+</li>
+      
+      
+      
     </ul>
-</div></div>
-            <div class="col-md-9" role="main">
+  
+</nav>
+    
+  </li>
 
-<style>
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../history_creation/" title="History Creation" class="md-nav__link">
+      History Creation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../genomespace/genomespace/" title="Introduction to GenomeSpace" class="md-nav__link">
+      Introduction to GenomeSpace
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Genomics Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Genomics Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../variant_calling_galaxy_1/variant_calling_galaxy_1/" title="Introduction to Variant Calling" class="md-nav__link">
+      Introduction to Variant Calling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Variant Calling Advanced
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Variant Calling Advanced
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../var_detect_advanced/var_detect_advanced/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../var_detect_advanced/var_detect_advanced_background/" title="Background" class="md-nav__link">
+      Background
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      RNA-seq DGE Basic
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        RNA-seq DGE Basic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_dge_basic/rna_seq_basic_tutorial/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_dge_basic/rna_seq_basic_background/" title="Background" class="md-nav__link">
+      Background
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_dge_advanced/rna_seq_advanced_tutorial/" title="RNA-seq DGE Advanced" class="md-nav__link">
+      RNA-seq DGE Advanced
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rna_seq_exp_design/rna_seq_experimental_design/" title="RNA-seq DGE Experimental Design" class="md-nav__link">
+      RNA-seq DGE Experimental Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-6" type="checkbox" id="nav-3-6">
+    
+    <label class="md-nav__link" for="nav-3-6">
+      Microbial de novo Assembly for Illumina Data
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-6">
+        Microbial de novo Assembly for Illumina Data
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assembly/assembly/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assembly/assembly-background/" title="Method Background" class="md-nav__link">
+      Method Background
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Proteomics Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Proteomics Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      Identifying proteins from mass spectrometry data
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        Identifying proteins from mass spectrometry data
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/proteomics_basic/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_galaxy/" title="Galaxy Background" class="md-nav__link">
+      Galaxy Background
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_data_formats/" title="Data Formats Background" class="md-nav__link">
+      Data Formats Background
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_findcountitems_workflow/" title="Create find count items workflow" class="md-nav__link">
+      Create find count items workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_protein_databases/" title="Protein Databases" class="md-nav__link">
+      Protein Databases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_search_engines/" title="Search Engines" class="md-nav__link">
+      Search Engines
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../proteomics_basic/background_protein_prophet/" title="Protein Prophet" class="md-nav__link">
+      Protein Prophet
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Protocols
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Protocols
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assembly/assembly-protocol/" title="De Novo Genome Assembly for Illumina Data" class="md-nav__link">
+      De Novo Genome Assembly for Illumina Data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" title="Background" class="md-nav__link">
+    Background
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-1-preparation" title="Section 1: Preparation." class="md-nav__link">
+    Section 1: Preparation.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-2-create-and-run-a-workflow" title="Section 2: Create and run a workflow." class="md-nav__link">
+    Section 2: Create and run a workflow.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-the-workflow-history" title="Import the workflow history" class="md-nav__link">
+    Import the workflow history
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-creation-method-1" title="Workflow creation: Method 1" class="md-nav__link">
+    Workflow creation: Method 1
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#some-discussion" title="Some discussion" class="md-nav__link">
+    Some discussion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-creation-method-2" title="Workflow Creation: Method 2" class="md-nav__link">
+    Workflow Creation: Method 2
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-workflow-name-and-edit-space" title="Step 1: Create a workflow name and edit space." class="md-nav__link">
+    Step 1: Create a workflow name and edit space.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-open-the-editor-and-place-component-tools" title="Step 2: Open the editor and place component tools" class="md-nav__link">
+    Step 2: Open the editor and place component tools
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-save-it" title="Step 3: Save it!" class="md-nav__link">
+    Step 3: Save it!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-workflow" title="Running the workflow" class="md-nav__link">
+    Running the workflow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-new-history" title="Create the new history" class="md-nav__link">
+    Create the new history
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-workflow" title="Run the workflow" class="md-nav__link">
+    Run the workflow
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-now" title="What now?" class="md-nav__link">
+    What now?
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <style>
   .image-header-gvl {
     -webkit-column-count: 3;
     -moz-column-count: 3;
@@ -203,11 +1056,11 @@
 <div class="image-header-gvl">
     <a href=http://genome.edu.au><img src="../media/gvl_logo.jpg" alt="GVL logo" width="112"/></a>
     <a href="http://galaxyproject.org"><img src="../media/GalaxyLogoHighRes.png" width="164" /></a>
-    <a href=http://vlsci.org.au><img src="../media/vlsci_logo.jpg" alt="VLSCI logo" width="164"/></a>
+    <a href="https://www.melbournebioinformatics.org.au/"><img src="../../../img/melbioinf_logo.png" alt="Melbourne Bioinformatics logo" width="164"/></a>
 </div>
 
 <h1 id="galaxy-workflows">Galaxy Workflows</h1>
-<p>Written and maintained by <a href="mailto:simon.gladman@unimelb.edu.au">Simon Gladman</a> - VLSCI</p>
+<p>Written and maintained by <a href="mailto:simon.gladman@unimelb.edu.au">Simon Gladman</a> - Melbourne Bioinformatics (formerly VLSCI)</p>
 <h2 id="background">Background</h2>
 <p>This workshop/tutorial will familiarise you with the Galaxy workflow engine. It will cover the following topics:</p>
 <ul>
@@ -217,7 +1070,7 @@
 </ul>
 <hr />
 <h2 id="section-1-preparation">Section 1: Preparation.</h2>
-<p>The purpose of this section is to get you to log in to the server.. For this workshop, you can use a Galaxy server that you have created by following the steps outlined in: <a href="">Launch a GVL Galaxy Instance</a> or you can use the public <a href="http://galaxy-tut.genome.edu.au">Galaxy-tut</a></p>
+<p>The purpose of this section is to get you to log in to the server.. For this workshop, you can use a Galaxy server that you have created by following the steps outlined in: <a href="">Launch a GVL Galaxy Instance</a> or you can use the public <a href="http://galaxy-mel.genome.edu.au">Galaxy-mel</a></p>
 <p><strong>Go to Galaxy URL of your server in Firefox or Chrome (your choice, please don't use IE or Safari.)</strong></p>
 <ul>
 <li>If you have previously registered on this server just log in:<ul>
@@ -241,20 +1094,33 @@
 <h2 id="section-2-create-and-run-a-workflow">Section 2: Create and run a workflow.</h2>
 <p>This section will show you two different methods to create a workflow and then how to run one.</p>
 <h3 id="import-the-workflow-history">Import the workflow history</h3>
-<p>This step will show you how to import a history from a remote source into your own workspace. We will be using this history to build a workflow.</p>
+<p>In this step we will import a shared history to our workspace so we can extract a workflow from it. This will only work on Galaxy servers which have the history available on it. If yours doesn't have the appropriate history, there are instructions to create it <a href="../history_creation/">here</a>. Alternatively, you can extract a workflow from any history you have in your "Saved Histories."</p>
 <ul>
-<li>From the histories menu <img src="../media/Galaxy-menu.png" width=20 />, click <strong>Import from File</strong>.</li>
-<li>Enter <em>https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/Workflow-finished-history.tar.gz</em> in the URL box.</li>
-<li>Click <strong>Submit</strong></li>
+<li>From the menu at the top of the Galaxy window, click <strong>Shared Data -&gt; Histories</strong></li>
+<li>Find the history called "<em>workflow_finished</em>" and click on it.</li>
+<li>Then click on <strong>Import history</strong> at the top right of the screen.</li>
+<li>Change the name if you wish and then click <strong>Import</strong></li>
 </ul>
-<p>You might have to wait for a bit, then:</p>
-<ul>
-<li>From the history menu <img src="../media/Galaxy-menu.png" width=20 />, click <strong>Saved Histories</strong></li>
-<li>Select the history: <em>Imported: Workflow-finished</em></li>
-</ul>
-<h3 id="workflow-creation-method-1">Workflow creation: Method 1</h3>
+<p>This history should now be in your history pane on the right.</p>
+<!--
+
+This step will show you how to import a history from a remote source into your own workspace. We will be using this history to build a workflow.
+
+* From the histories menu <img src="../media/Galaxy-menu.png" width=20 />, click **Import from File**.
+* Enter *https://swift.rc.nectar.org.au:8888/v1/AUTH_377/public/Workflow-finished-history.tar.gz* in the URL box.
+* Click **Submit**
+
+You might have to wait for a bit, then:
+
+* From the history menu <img src="../media/Galaxy-menu.png" width=20 />, click **Saved Histories**
+* Select the history: *Imported: Workflow-finished*
+
+
+-->
+
+<h2 id="workflow-creation-method-1">Workflow creation: Method 1</h2>
 <p>We will create a workflow from an existing history. You can use this method to make a re-useable analysis from one you’ve already done. i.e. You can perform the analysis once and then create a workflow out of it to re-use it on more/new data. We will create a workflow from the history you imported in step 1 above. The footnote below explains the steps that created this history. These are the steps we will mimic in the workflow.</p>
-<p>Make sure your current history is the one you imported in Section 2 - Step 1 above (<em>imported: Workflow_finished.</em>) If not, switch to it.</p>
+<p>Make sure your current history is the one you imported in Section 2 - Step 1 above (<em>imported: workflow_finished.</em>) If not, switch to it. If you couldn't import it, you should be able to complete this step with any suitable history.</p>
 <p><strong>Now we will create the workflow.</strong></p>
 <ul>
 <li>Click on the histories menu button <img src="../media/Galaxy-menu.png" width=20 /> at the top of the history pane.</li>
@@ -266,8 +1132,8 @@
 <li>Click <strong>Create Workflow</strong></li>
 </ul>
 <p>The workflow is now accessible via the bottom of the tool pane by clicking on All Workflows.</p>
-<h4 id="some-discussion">Some discussion:</h4>
-<p>Have a look at your workflow. Click on its button in the workflow list. It’s tool interface will appear. You can now run this workflow any time you like with different input datasets. NOTE: The input data sets must be of the same types as the original ones. i.e. Two fastq reads files and one fasta reference sequence.</p>
+<h3 id="some-discussion">Some discussion</h3>
+<p>Have a look at your workflow. Click on its button in the workflow list. It’s tool interface will appear. You can now run this workflow any time you like with different input datasets. NOTE: The input data sets must be of the same types as the original ones. i.e. In our case, two fastq reads files and one fasta reference sequence.</p>
 <p>More interesting though is to:</p>
 <ul>
 <li>Click on the  <strong>Workflows</strong> link in the top menu</li>
@@ -276,22 +1142,17 @@
 </ul>
 <p>A visualisation of your workflow will appear. Note the connections and the steps.</p>
 <p>Next we’ll go through how to create this workflow using the editor..</p>
-<h3 id="workflow-creation-method-2">Workflow Creation: Method 2</h3>
-<p>We will now create the same read mapping/variant calling workflow using the editor directly. We need to get some reads and a reference, map the reads to the reference using BWA, run Freebayes on the BAM to call the variants, and finally filter the resulting vcf file.</p>
-<h4 id="step-1-create-a-workflow-name-and-edit-space">Step 1: Create a workflow name and edit space.</h4>
+<h2 id="workflow-creation-method-2">Workflow Creation: Method 2</h2>
+<p>We will now create the same read mapping/variant calling workflow using the editor directly. The workflow needs to take in some reads and a reference, map the reads to the reference using BWA, run Freebayes on the BAM output from BWA to call the variants, and finally filter the resulting vcf file.</p>
+<h3 id="step-1-create-a-workflow-name-and-edit-space">Step 1: Create a workflow name and edit space.</h3>
 <ul>
 <li>Click on <strong>Workflow</strong> in Galaxy’s menu.</li>
 <li>Click on the <strong>Create New Workflow</strong> button.</li>
 <li>In the "Workflow Name" text box type: <em>Variants from scratch</em></li>
 <li>Click the <strong>Create</strong> button.</li>
 </ul>
-<p>You’ll now see a list of workflows. Your’s will be in that list.</p>
-<h4 id="step-2-open-the-editor-and-place-component-tools">Step 2: Open the editor and place component tools</h4>
-<ul>
-<li>Click on the down arrow on your workflow’s button.</li>
-<li>Select <strong>Edit</strong></li>
-</ul>
-<p>You’ll be presented with a blank workflow grid.</p>
+<p>You should now be presented with a blank workflow editing grid.</p>
+<h3 id="step-2-open-the-editor-and-place-component-tools">Step 2: Open the editor and place component tools</h3>
 <p><strong>Add three input datafiles.</strong></p>
 <ul>
 <li>In the Workflow control section of the tool pane, click on <strong>Inputs -&gt; Input dataset</strong> three times.</li>
@@ -338,14 +1199,14 @@
 <p>If you’re keen - <strong>Note: this is optional.</strong> Also change the following parameters the right hand pane for freebayes to make it a bit more sensible for variant calling in bacterial genomes.</p>
 <ul>
 <li>"Choose parameter selection level": <em>Complete list of all options</em></li>
-<li>"Set population model": <em>Yes</em></li>
+<li>"Population model options": <em>Set population model options</em></li>
 <li>"Set ploidy for the analysis": <em>1</em></li>
-<li>"Set input filters": <em>Yes</em></li>
+<li>"Input filters": <em>Set input filters</em></li>
 <li>"Exclude alignments from analysis if they have a mapping quality less than": <em>20</em></li>
 <li>"Exclude alleles from analysis if their supporting base quality is less than": <em>20</em></li>
 <li>"Require at least this fraction of observations … to evaluate the position": <em>0.9</em></li>
 <li>"Require at least this count of observations .. to evaluate the position": <em>10</em></li>
-<li>"Set population and mappability priors": <em>Yes</em></li>
+<li>"Population and mappability priors": <em>Set population and mappability priors</em></li>
 <li>"Disable incorporation of prior expectations about observations": <em>Yes</em></li>
 </ul>
 <p><strong>Add in the Filter step.</strong></p>
@@ -364,13 +1225,13 @@
 <li>Click on the star next to "Map with BWA’s" bam file output.</li>
 <li>Click on the star next to "Filter’s" output vcf.</li>
 </ul>
-<h4 id="step-3-save-it">Step 3: Save it!</h4>
+<h3 id="step-3-save-it">Step 3: Save it!</h3>
 <p>Click on the <img src="../media/Galaxy-menu.png" width=20 /> at the top of the workflow grid and select <strong>Save</strong>.</p>
 <p>Congratulations. You’ve just created a Galaxy workflow.</p>
 <p>Now to run it!</p>
-<h3 id="running-the-workflow">Running the workflow</h3>
+<h2 id="running-the-workflow">Running the workflow</h2>
 <p>We will now make a new history called "Test" and run the workflow on it’s data.</p>
-<h4 id="create-the-new-history">Create the new history</h4>
+<h3 id="create-the-new-history">Create the new history</h3>
 <ul>
 <li>From the Histories Menu, select <strong>Copy Datasets</strong></li>
 <li>Select the 2 x fastq files and the Ecoli .fna file.</li>
@@ -378,7 +1239,7 @@
 <li>Click <strong>Copy History Items</strong> button</li>
 <li>Click on the link to the new history in the green bar at the top of the screen</li>
 </ul>
-<h4 id="run-the-workflow">Run the workflow</h4>
+<h3 id="run-the-workflow">Run the workflow</h3>
 <ul>
 <li>On the tools pane, click <strong>All Workflows</strong></li>
 <li>Select the <em>Variants from scratch</em> workflow (or whatever you called it.)</li>
@@ -390,20 +1251,57 @@
 </ul>
 <p>Your workflow will now run. It will send the right files to the right tools at the right time to the cluster (compute engine on your machine) and wait for them to finish. Watch as they turn yellow then green in turn.</p>
 <h2 id="what-now">What now?</h2>
-<p>Where to start? There’s so much you can do with Workflows. You can even run them on multiple file sets from the one setup.</p></div>
+<p>Where to start? There’s so much you can do with Workflows. You can even run them on multiple file sets from the one setup.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
         </div>
-
-        <footer class="col-md-12">
-            <hr>
-            
-            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
-        </footer>
-
-        <script src="../../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../../js/highlight.pack.js"></script>
-        <script src="../../../js/base.js"></script>
+      </main>
+      
+        
+<!-- This is just a copy of the mkdocs-material footer.html with the Prev/Next page navigation removed.-->
+<footer class="md-footer">
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <a href="https://www.melbournebioinformatics.org.au/">Melbourne Bioinformatics</a>
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application-f3ab9e5ff8.js"></script>
+      
+      
+      <script>app.initialize({url:{base:"../../.."}})</script>
+      
         <script src="../../../includes/media/delayed-jquery.js"></script>
+      
         <script src="../../../includes/media/mdx_showable.js"></script>
-    </body>
+      
+    
+    
+      
+    
+  </body>
 </html>
